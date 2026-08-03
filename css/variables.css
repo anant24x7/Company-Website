@@ -1,0 +1,33 @@
+:root{
+
+
+    /* Brand Colors */
+
+
+    --primary-color:#0B1F4D;
+    --secondary-color:#0EA5E9;
+    --accent-color:#2563EB;
+
+    --white-color:#FFFFFF;
+    --light:#F8FAFC;
+    --gray:#64748B;
+    --dark:#1E293B;
+
+
+    /* Typography */
+
+    --heading-font:'Poppins', sans-serif;
+    --body-font:'Inter', sans-serif;
+
+
+    /* Sizes */
+
+    --container:1200px;
+
+    --radius:12px;
+
+    --shadow:0 10px 25px rgba(0, 0, 0, .08);
+
+    --transition: .35s;
+
+}
