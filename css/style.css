@@ -2644,3 +2644,185 @@ SERVICES HERO
 .erp-cta-box p{
     color:#DBEAFE;
 }
+
+
+/* =====================================
+   POWER BI PAGE
+===================================== */
+
+.bi-hero{
+    background:linear-gradient(135deg,#F8FAFC,#EFF6FF);
+    padding:100px 0;
+}
+
+.bi-hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
+    align-items:center;
+}
+
+.bi-hero-content h2{
+    font-size:52px;
+    line-height:1.2;
+    color:var(--primary);
+    margin:20px 0 25px;
+}
+
+.bi-hero-content p{
+    font-size:19px;
+    line-height:1.8;
+    color:var(--gray);
+    margin-bottom:35px;
+}
+
+.bi-hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.bi-hero-image img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+
+/* BI SERVICES */
+
+.bi-service-grid,
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.bi-service-card,
+.dashboard-card{
+    background:#ffffff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+
+.bi-service-card:hover,
+.dashboard-card:hover{
+    transform:translateY(-8px);
+}
+
+.bi-service-card i,
+.dashboard-card i{
+    font-size:42px;
+    color:var(--accent);
+    margin-bottom:20px;
+}
+
+
+/* DATA SOURCES */
+
+.bi-data{
+    background:#F8FAFC;
+}
+
+.data-source-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.data-source{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:var(--shadow);
+    font-weight:600;
+}
+
+.data-source i{
+    color:var(--accent);
+    font-size:25px;
+}
+
+
+/* BI PROCESS */
+
+.bi-process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.bi-step{
+    background:#ffffff;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:var(--shadow);
+}
+
+.bi-step span{
+    display:inline-flex;
+    width:48px;
+    height:48px;
+    align-items:center;
+    justify-content:center;
+    background:var(--accent);
+    color:white;
+    border-radius:50%;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+
+/* WHY BI */
+
+.bi-why{
+    background:#F8FAFC;
+}
+
+.bi-why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.bi-why-grid > div{
+    background:#ffffff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+}
+
+.bi-why-grid i{
+    font-size:38px;
+    color:var(--accent);
+    margin-bottom:18px;
+}
+
+
+/* BI CTA */
+
+.bi-cta-box{
+    background:linear-gradient(135deg,#0F172A,#2563EB);
+    color:white;
+    padding:50px;
+    border-radius:24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.bi-cta-box h2{
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.bi-cta-box p{
+    color:#DBEAFE;
+}

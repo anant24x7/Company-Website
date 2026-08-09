@@ -206,3 +206,43 @@ grid-template-columns:1fr;
     }
 
 }
+
+@media(max-width:992px){
+
+    .bi-hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .bi-service-grid,
+    .dashboard-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .data-source-grid,
+    .bi-process-grid,
+    .bi-why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .bi-cta-box{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .bi-service-grid,
+    .dashboard-grid,
+    .data-source-grid,
+    .bi-process-grid,
+    .bi-why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .bi-hero-content h2{
+        font-size:38px;
+    }
+
+}
