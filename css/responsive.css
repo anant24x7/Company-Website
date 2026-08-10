@@ -328,3 +328,43 @@ grid-template-columns:1fr;
     }
 
 }
+
+@media(max-width:992px){
+
+    .web-hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .web-service-grid,
+    .web-solution-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .web-tech-grid,
+    .web-process-grid,
+    .web-why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .web-cta-box{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .web-service-grid,
+    .web-solution-grid,
+    .web-tech-grid,
+    .web-process-grid,
+    .web-why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .web-hero-content h2{
+        font-size:38px;
+    }
+
+}
