@@ -246,3 +246,43 @@ grid-template-columns:1fr;
     }
 
 }
+
+@media(max-width:992px){
+
+    .ai-hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ai-service-grid,
+    .ai-use-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .ai-process-grid,
+    .ai-benefit-grid,
+    .ai-why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .ai-cta-box{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .ai-service-grid,
+    .ai-use-grid,
+    .ai-process-grid,
+    .ai-benefit-grid,
+    .ai-why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ai-hero-content h2{
+        font-size:38px;
+    }
+
+}
