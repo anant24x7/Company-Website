@@ -368,3 +368,47 @@ grid-template-columns:1fr;
     }
 
 }
+
+@media(max-width:992px){
+
+    .consulting-hero-grid{
+        grid-template-columns:1fr;
+    }
+
+    .consulting-service-grid,
+    .document-grid,
+    .consulting-process-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .improvement-grid,
+    .roadmap-grid,
+    .consulting-benefit-grid,
+    .consulting-why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .consulting-cta-box{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .consulting-service-grid,
+    .document-grid,
+    .improvement-grid,
+    .roadmap-grid,
+    .consulting-process-grid,
+    .consulting-benefit-grid,
+    .consulting-why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .consulting-hero-content h2{
+        font-size:38px;
+    }
+
+}

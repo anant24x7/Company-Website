@@ -3344,3 +3344,195 @@ SERVICES HERO
 .web-cta-box p{
     color:#DBEAFE;
 }
+
+/* =====================================
+   BUSINESS CONSULTING PAGE
+===================================== */
+
+.consulting-hero{
+    background:linear-gradient(135deg,#F8FAFC,#F0FDF4);
+    padding:100px 0;
+}
+
+.consulting-hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
+    align-items:center;
+}
+
+.consulting-hero-content h2{
+    font-size:52px;
+    line-height:1.2;
+    color:var(--primary);
+    margin:20px 0 25px;
+}
+
+.consulting-hero-content p{
+    font-size:19px;
+    line-height:1.8;
+    color:var(--gray);
+    margin-bottom:35px;
+}
+
+.consulting-hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.consulting-hero-image img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+
+/* CONSULTING SERVICES */
+
+.consulting-service-grid,
+.document-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.consulting-service-card,
+.document-card{
+    background:#ffffff;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+
+.consulting-service-card:hover,
+.document-card:hover{
+    transform:translateY(-8px);
+}
+
+.consulting-service-card i,
+.document-card i{
+    font-size:42px;
+    color:var(--accent);
+    margin-bottom:20px;
+}
+
+
+/* PROCESS IMPROVEMENT */
+
+.process-improvement{
+    background:#F8FAFC;
+}
+
+.improvement-grid,
+.roadmap-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+
+.improvement-card,
+.roadmap-card{
+    background:#ffffff;
+    padding:28px;
+    border-radius:16px;
+    box-shadow:var(--shadow);
+}
+
+.improvement-card span{
+    display:inline-flex;
+    width:46px;
+    height:46px;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--accent);
+    color:#ffffff;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.roadmap-card i{
+    font-size:36px;
+    color:var(--accent);
+    margin-bottom:18px;
+}
+
+
+/* CONSULTING PROCESS */
+
+.consulting-process-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.consulting-step{
+    background:#ffffff;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:var(--shadow);
+}
+
+.consulting-step span{
+    display:inline-flex;
+    width:48px;
+    height:48px;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--accent);
+    color:#ffffff;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+
+/* BENEFITS + WHY */
+
+.consulting-benefit-grid,
+.consulting-why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.consulting-benefit-card,
+.consulting-why-grid > div{
+    background:#ffffff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+}
+
+.consulting-benefit-card i,
+.consulting-why-grid i{
+    font-size:38px;
+    color:var(--accent);
+    margin-bottom:18px;
+}
+
+
+/* CTA */
+
+.consulting-cta-box{
+    background:linear-gradient(135deg,#0F172A,#166534);
+    color:#ffffff;
+    padding:50px;
+    border-radius:24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.consulting-cta-box h2{
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.consulting-cta-box p{
+    color:#DCFCE7;
+}
