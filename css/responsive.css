@@ -1,3 +1,27 @@
+/* =====================================
+   GLOBAL RESPONSIVE RULES
+===================================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+.container{
+    width:min(1200px,90%);
+}
+
+
+
+
 @media(max-width:992px){
 
     .trust-grid{
@@ -409,6 +433,501 @@ grid-template-columns:1fr;
 
     .consulting-hero-content h2{
         font-size:38px;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .contact-wrapper{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .form-row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .contact-info,
+    .contact-form-card{
+        padding:30px;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .contact-form-card h3{
+        font-size:25px;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .navbar-container{
+        height:70px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .navbar-cta{
+        display:none;
+    }
+
+    .nav-menu{
+        position:absolute;
+
+        top:70px;
+        left:0;
+
+        width:100%;
+
+        background:#ffffff;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:0;
+
+        padding:20px 0;
+
+        box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+        display:none;
+    }
+
+    .nav-menu.active{
+        display:flex;
+    }
+
+    .nav-menu li{
+        width:100%;
+        text-align:center;
+    }
+
+    .nav-menu a{
+        display:block;
+
+        padding:14px 20px;
+
+        width:100%;
+    }
+
+}
+
+@media(max-width:992px){
+
+    h1{
+        font-size:46px;
+    }
+
+    h2{
+        font-size:36px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:38px;
+    }
+
+    h2{
+        font-size:32px;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    h1{
+        font-size:32px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    section{
+        padding:60px 0;
+    }
+
+}
+
+@media(max-width:480px){
+
+    section{
+        padding:45px 0;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .hero-wrapper,
+    .erp-hero-grid,
+    .bi-hero-grid,
+    .ai-hero-grid,
+    .cloud-hero-grid,
+    .web-hero-grid,
+    .consulting-hero-grid{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .hero-wrapper{
+
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .hero-content,
+    .hero-image{
+
+        width:100%;
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+    }
+
+    .hero-features,
+    .hero-highlights{
+
+        justify-content:center;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .hero-buttons,
+    .erp-hero-buttons,
+    .bi-hero-buttons,
+    .ai-hero-buttons,
+    .cloud-hero-buttons,
+    .web-hero-buttons,
+    .consulting-hero-buttons{
+
+        flex-direction:column;
+    }
+
+    .hero-buttons a,
+    .erp-hero-buttons a,
+    .bi-hero-buttons a,
+    .ai-hero-buttons a,
+    .cloud-hero-buttons a,
+    .web-hero-buttons a,
+    .consulting-hero-buttons a{
+
+        width:100%;
+
+        text-align:center;
+    }
+
+    .btn-outline{
+
+        margin-left:0;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .stats-grid,
+    .industry-grid,
+    .tech-grid,
+    .process-grid,
+    .trust-grid,
+    .benefit-grid,
+    .erp-why-grid,
+    .bi-process-grid,
+    .bi-why-grid,
+    .ai-process-grid,
+    .ai-benefit-grid,
+    .ai-why-grid,
+    .cloud-process-grid,
+    .cloud-security-grid,
+    .cloud-benefit-grid,
+    .cloud-why-grid,
+    .web-tech-grid,
+    .web-process-grid,
+    .web-why-grid,
+    .consulting-benefit-grid,
+    .consulting-why-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:576px){
+
+    .stats-grid,
+    .industry-grid,
+    .tech-grid,
+    .process-grid,
+    .trust-grid,
+    .benefit-grid,
+    .erp-why-grid,
+    .bi-process-grid,
+    .bi-why-grid,
+    .ai-process-grid,
+    .ai-benefit-grid,
+    .ai-why-grid,
+    .cloud-process-grid,
+    .cloud-security-grid,
+    .cloud-benefit-grid,
+    .cloud-why-grid,
+    .web-tech-grid,
+    .web-process-grid,
+    .web-why-grid,
+    .consulting-benefit-grid,
+    .consulting-why-grid{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:992px){
+
+    .services-grid,
+    .service-grid,
+    .testimonial-grid,
+    .mission-grid,
+    .consulting-service-grid,
+    .document-grid,
+    .bi-service-grid,
+    .dashboard-grid,
+    .ai-service-grid,
+    .ai-use-grid,
+    .cloud-service-grid,
+    .cloud-use-grid,
+    .web-service-grid,
+    .web-solution-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:576px){
+
+    .services-grid,
+    .service-grid,
+    .testimonial-grid,
+    .mission-grid,
+    .consulting-service-grid,
+    .document-grid,
+    .bi-service-grid,
+    .dashboard-grid,
+    .ai-service-grid,
+    .ai-use-grid,
+    .cloud-service-grid,
+    .cloud-use-grid,
+    .web-service-grid,
+    .web-solution-grid{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .about-wrapper,
+    .story-grid,
+    .leadership-grid,
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .form-row{
+
+        grid-template-columns:1fr;
+    }
+
+    .contact-info,
+    .contact-form-card{
+
+        padding:30px;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .quick-contact{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:576px){
+
+    .quick-contact{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .footer-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:576px){
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:15px;
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .timeline::before{
+
+        left:20px;
+    }
+
+    .timeline-item{
+
+        width:100%;
+
+        left:0 !important;
+
+        padding-left:55px;
+
+        padding-right:10px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .erp-cta-box,
+    .bi-cta-box,
+    .ai-cta-box,
+    .cloud-cta-box,
+    .web-cta-box,
+    .consulting-cta-box{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:35px 25px;
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .hero-image img,
+    .erp-hero-image img,
+    .bi-hero-image img,
+    .ai-hero-image img,
+    .cloud-hero-image img,
+    .web-hero-image img,
+    .consulting-hero-image img{
+
+        max-height:400px;
+
+        object-fit:cover;
+    }
+
+}
+
+
+
+@media(max-width:768px){
+
+    .btn-primary,
+    .btn-outline,
+    .service-link,
+    .quick-card{
+
+        min-height:44px;
+    }
+
+}
+
+
+@media(max-width:375px){
+
+    .container{
+
+        width:92%;
+    }
+
+    .logo{
+
+        font-size:22px;
+    }
+
+    .btn-primary,
+    .btn-outline{
+
+        padding:12px 18px;
+
+        font-size:14px;
+    }
+
+    .contact-info,
+    .contact-form-card,
+    .service-box{
+
+        padding:24px 18px;
     }
 
 }
