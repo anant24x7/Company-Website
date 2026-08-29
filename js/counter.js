@@ -1,31 +1,77 @@
-const counters = document.querySelectorAll(".counter");
+const counters =
+    document.querySelectorAll(".counter");
 
-counters.forEach(counter => {
+function animateCounter(counter) {
 
-    const target = Number(counter.dataset.target);
+    const target =
+        Number(counter.dataset.target);
 
-    let current = 0;
+    const suffix =
+        counter.dataset.suffix || "";
 
-    const increment = target / 100;
+    const duration = 1500;
 
-    const updateCounter = () => {
+    const startTime =
+        performance.now();
 
-        current += increment;
 
-        if(current < target){
+    function update(currentTime) {
 
-            counter.innerText = Math.ceil(current);
+        const progress =
+            Math.min(
+                (currentTime - startTime) / duration,
+                1
+            );
 
-            requestAnimationFrame(updateCounter);
+        const currentValue =
+            Math.floor(target * progress);
 
-        }else{
+        counter.textContent =
+            currentValue + suffix;
 
-            counter.innerText = target + "+";
+
+        if (progress < 1) {
+
+            requestAnimationFrame(update);
+
+        } else {
+
+            counter.textContent =
+                target + suffix;
 
         }
 
-    };
+    }
 
-    updateCounter();
+    requestAnimationFrame(update);
+
+}
+
+
+const counterObserver =
+    new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                animateCounter(entry.target);
+
+                counterObserver.unobserve(
+                    entry.target
+                );
+
+            }
+
+        });
+
+    }, {
+        threshold:0.5
+    });
+
+
+counters.forEach(counter => {
+
+    counterObserver.observe(counter);
 
 });

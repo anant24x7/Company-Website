@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Dataweb Solutions</title>
+
+    <link rel="stylesheet" href="./admin.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            Dataweb Admin
+        </div>
+
+        <nav>
+            <a href="dashboard.html" class="active">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+            <a href="#enquiries">
+                <i class="fa-solid fa-envelope"></i>
+                Enquiries
+            </a>
+
+            <a href="../index.html" target="_blank">
+                <i class="fa-solid fa-globe"></i>
+                View Website
+            </a>
+
+            <a href="#" id="logoutButton">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </nav>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <div class="page-header">
+
+            <h1>Enquiry Dashboard</h1>
+
+            <p>
+                Manage website leads and customer enquiries.
+            </p>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <p>Total Enquiries</p>
+                <h2 id="totalEnquiries">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>New</p>
+                <h2 id="newEnquiries">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Contacted</p>
+                <h2 id="contactedEnquiries">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Qualified</p>
+                <h2 id="qualifiedEnquiries">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Converted</p>
+                <h2 id="convertedEnquiries">0</h2>
+            </div>
+
+        </div>
+
+
+        <section id="enquiries">
+
+            <div class="filters">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search name, email or phone..."
+                >
+
+                <select id="serviceFilter">
+                    <option value="">All Services</option>
+                    <option value="ERP Consulting">ERP Consulting</option>
+                    <option value="Power BI">Power BI</option>
+                    <option value="Business Consulting">
+                        Business Consulting
+                    </option>
+                    <option value="Web Development">
+                        Web Development
+                    </option>
+                </select>
+
+                <select id="statusFilter">
+                    <option value="">All Statuses</option>
+                    <option value="New">New</option>
+                    <option value="Contacted">Contacted</option>
+                    <option value="Qualified">Qualified</option>
+                    <option value="Converted">Converted</option>
+                    <option value="Closed">Closed</option>
+                </select>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Company</th>
+                            <th>Service</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="enquiryTableBody">
+
+                        <tr>
+                            <td colspan="9">
+                                Loading enquiries...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="./admin.js"></script>
+
+</body>
+
+</html>

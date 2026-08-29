@@ -908,6 +908,7 @@ footer {
 }
 
 
+
 /*======================================
  RESPONSIVE
 ======================================*/
@@ -1202,6 +1203,7 @@ footer {
     color:#0369A1;
 
 }
+
 
 .design{
 
@@ -3749,4 +3751,223 @@ SERVICES HERO
     color:var(--primary);
 
     cursor:pointer;
+}
+
+.navbar{
+    transition:0.3s;
+}
+
+.navbar.scrolled{
+    box-shadow:0 8px 25px rgba(15,23,42,.12);
+}
+
+/*================================
+    Active Nevigation Link
+    =================================*/
+
+.nav-menu a.active{
+    color:var(--accent);
+    font-weight:700;
+}
+
+
+.faq-question{
+    width:100%;
+    background:none;
+    border:none;
+    cursor:pointer;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    text-align:left;
+
+    font-family:inherit;
+    font-size:18px;
+    font-weight:600;
+
+    color:var(--primary);
+}
+
+.faq-question i{
+    color:var(--accent);
+    transition:.3s;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+}
+
+.faq-answer p{
+    padding-top:15px;
+}
+
+.faq-item.active .faq-answer{
+    max-height:300px;
+}
+
+.faq-item.active .faq-question i{
+    transform:rotate(45deg);
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.submit-btn:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+}
+
+.btn-primary,
+.btn-outline{
+    position:relative;
+    overflow:hidden;
+}
+
+.btn-primary:active,
+.btn-outline:active{
+    transform:scale(.97);
+}
+
+.card-hover{
+    transition:var(--transition);
+}
+
+.card-hover:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(15,23,42,.12);
+}
+
+
+/* =====================================
+   NAVBAR DROPDOWN
+===================================== */
+
+.nav-dropdown{
+
+    position:relative;
+
+}
+
+
+/* Services link */
+
+.dropdown-toggle{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+}
+
+
+/* Arrow */
+
+.dropdown-toggle i{
+
+    font-size:12px;
+
+    transition:.3s;
+
+}
+
+
+/* Dropdown */
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:calc(100% + 15px);
+
+    left:0;
+
+    width:260px;
+
+    background:#0b051c;
+
+    border-radius:12px;
+
+    padding:10px 0;
+
+    box-shadow:0 15px 40px rgba(238, 238, 240, 0.15);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:.3s;
+
+    z-index:1000;
+
+}
+
+
+/* Dropdown items */
+
+.dropdown-menu li{
+
+    width:100%;
+
+}
+
+
+.dropdown-menu a{
+
+    display:block;
+
+    padding:13px 20px;
+
+    color:white;
+
+    font-size:15px;
+
+    white-space:nowrap;
+
+}
+
+
+.dropdown-menu a:hover{
+
+    background:#f2efff;
+
+    color:#0b051c;
+
+}
+
+
+/* Desktop hover */
+
+.nav-dropdown:hover .dropdown-menu{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+
+.nav-dropdown:hover .dropdown-toggle i{
+
+    transform:rotate(180deg);
+
 }

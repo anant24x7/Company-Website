@@ -32,54 +32,105 @@
 
         <div class="container navbar-container">
 
-            <a href="#" class="logo">
+            <!-- Logo -->
 
+            <a href="index.html" class="logo">
                 <span class="logo-blue">Dataweb</span>
-
                 <span class="logo-dark">Solutions</span>
-
             </a>
 
-            <ul class="nav-menu">
 
-                <li><a href="#">Home</a></li>
+            <!-- Mobile Button -->
 
-                <li><a href="erp.html" class="service-link">
-                    Learn More →
-                </a></li>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu">
 
-                <a href="power-bi.html" class="service-link">
-                    Learn More →
-                </a>
+                <i class="fa-solid fa-bars"></i>
 
-                <a href="ai-automation.html" class="service-link">
-                    Learn More →
-                </a>
+            </button>
 
-                <a href="cloud-services.html" class="service-link">
-                    Learn More →
-                </a>
 
-                <a href="web-development.html" class="service-link">
-                    Learn More →
-                </a>
+            <!-- Navigation -->
 
-                <a href="consulting.html" class="service-link">
-                    Learn More →
-                </a>
+            <ul class="nav-menu" id="navMenu">
 
-                
-                <li><a href="#">Solutions</a></li>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
 
-                <li><a href="#">Portfolio</a></li>
 
-                <li><a href="#">About</a></li>
+                <!-- SERVICES DROPDOWN -->
 
-                <li><a href="#">Contact</a></li>
+                <li class="nav-dropdown">
+
+                    <a href="services.html" class="dropdown-toggle">
+
+                        Services
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </a>
+
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a href="erp.html">
+                                ERP Consulting
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="power-bi.html">
+                                Power BI & Analytics
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="ai.html">
+                                AI & Automation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="cloud.html">
+                                Cloud Solutions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="web-development.html">
+                                Web Development
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="consulting.html">
+                                Business Consulting
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
 
             </ul>
 
-            <a href="#" class="btn-primary">
+
+            <!-- CTA -->
+
+            <a href="contact.html"
+               class="btn-primary navbar-cta">
 
                 Book Free Consultation
 
@@ -89,7 +140,7 @@
 
     </nav>
 
-</header>
+</header>      
 
 
 
@@ -696,6 +747,8 @@
 
 </section>
 
+<div class="service-card reveal"></div>
+
 
 
 <!-- --------------------------------Footer------------------------------- -->
@@ -754,8 +807,7 @@
 
                     <li><a href="#">Careers</a></li>
 
-                    <li><a href="#">Blog</a></li>
-
+                    
                 </ul>
 
             </div>
@@ -850,7 +902,10 @@
  </footer>
 
 <script src="js/script.js"></script>
+
 <script src="js/navbar.js"></script>
+
+<script src="js/ui.js"></script>
 
 </body>
 

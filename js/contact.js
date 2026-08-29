@@ -1,22 +1,55 @@
-const contactForm = document.getElementById("contactForm");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (contactForm) {
+    console.log("STEP 1: contact.js loaded successfully");
 
-    contactForm.addEventListener("submit", function (event) {
+    const contactForm = 
+        document.getElementById("contactForm");
 
+    const successMessage = 
+        document.getElementById("formSuccess");
+
+    console.log(
+        "STEP 2: Contact form found:",
+         contactForm
+        );
+
+    
+    if (!contactForm) {
+        return;
+    }
+
+
+    contactForm.addEventListener("submit", async function (event) {
+
+        console.log("STEP 3: Submit button clicked");
+        
+
+        // Prevent normal form submission
         event.preventDefault();
 
+        // Clear old errors
         clearErrors();
 
+
+        // Get form fields
         const name = document.getElementById("name");
+        const company = document.getElementById("company");
         const email = document.getElementById("email");
         const phone = document.getElementById("phone");
         const service = document.getElementById("service");
         const message = document.getElementById("message");
-        const successMessage = document.getElementById("formSuccess");
 
+        const successMessage =
+            document.getElementById("formSuccess");
+
+
+        // Start by assuming form is valid
         let isValid = true;
 
+
+        /* =====================================
+           NAME VALIDATION
+        ===================================== */
 
         if (name.value.trim().length < 2) {
 
@@ -29,6 +62,10 @@ if (contactForm) {
         }
 
 
+        /* =====================================
+           EMAIL VALIDATION
+        ===================================== */
+
         if (!validateEmail(email.value.trim())) {
 
             showError(
@@ -40,7 +77,12 @@ if (contactForm) {
         }
 
 
-        const cleanPhone = phone.value.replace(/\D/g, "");
+        /* =====================================
+           PHONE VALIDATION
+        ===================================== */
+
+        const cleanPhone =
+            phone.value.replace(/\D/g, "");
 
         if (cleanPhone.length < 10) {
 
@@ -53,6 +95,10 @@ if (contactForm) {
         }
 
 
+        /* =====================================
+           SERVICE VALIDATION
+        ===================================== */
+
         if (service.value === "") {
 
             showError(
@@ -64,84 +110,204 @@ if (contactForm) {
         }
 
 
+        /* =====================================
+           MESSAGE VALIDATION
+        ===================================== */
+
         if (message.value.trim().length < 10) {
 
             showError(
                 message,
-                "Please provide a little more detail about your requirement."
+                "Please provide more details about your requirement."
             );
 
             isValid = false;
         }
 
 
-        if (isValid) {
+        /* =====================================
+           STOP IF VALIDATION FAILED
+        ===================================== */
+
+        if (!isValid) {
+            return;
+        }
+
+
+        /* =====================================
+           FORM IS VALID
+           SEND DATA TO NODE.JS API
+        ===================================== */
+
+        const submitButton =
+            contactForm.querySelector(".submit-btn");
+
+
+        submitButton.disabled = true;
+
+        submitButton.innerHTML =
+            '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+
+        const formData = {
+
+            name: name.value.trim(),
+
+            company: company
+                ? company.value.trim()
+                : "",
+
+            email: email.value.trim(),
+
+            phone: phone.value.trim(),
+
+            service: service.value,
+
+            message: message.value.trim()
+
+        };
+
+
+        try {
+
+            const response = await fetch(
+                "http://127.0.0.1:3000/api/enquiries",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify(formData)
+                }
+            );
+
+
+            const result = await response.json();
+
+
+            if (!response.ok) {
+
+                throw new Error(
+                    result.message ||
+                    "Unable to submit enquiry."
+                );
+            }
+
+
+            /* SUCCESS */
+
+            successMessage.style.color = "#15803D";
 
             successMessage.textContent =
-                "Thank you. Your enquiry has been validated successfully.";
+                result.message ||
+                "Thank you. Your enquiry has been submitted successfully.";
 
-            /*
-                IMPORTANT:
-                We are NOT sending the form anywhere yet.
-
-                In the next backend lesson, we will replace
-                this section with a real API request.
-            */
 
             contactForm.reset();
+
+
+        } catch (error) {
+
+            /* ERROR */
+
+            console.error(
+                "Form submission error:",
+                error
+            );
+
+
+            successMessage.style.color = "#DC2626";
+
+            successMessage.textContent =
+                "Unable to submit your enquiry. Please try again.";
+
+        } finally {
+
+            /* Restore button */
+
+            submitButton.disabled = false;
+
+            submitButton.innerHTML =
+                '<i class="fa-solid fa-paper-plane"></i> Request Free Consultation';
+
         }
 
     });
 
-}
+
+    /* =====================================
+       SHOW ERROR
+    ===================================== */
+
+    function showError(field, message) {
+
+        const formGroup =
+            field.closest(".form-group");
 
 
-function showError(field, message) {
+        if (!formGroup) {
+            return;
+        }
 
-    const formGroup = field.closest(".form-group");
 
-    formGroup.classList.add("error");
+        formGroup.classList.add("error");
 
-    const errorElement =
-        formGroup.querySelector(".error-message");
 
-    if (errorElement) {
-        errorElement.textContent = message;
+        const errorElement =
+            formGroup.querySelector(".error-message");
+
+
+        if (errorElement) {
+
+            errorElement.textContent =
+                message;
+        }
+
     }
 
-}
 
+    /* =====================================
+       CLEAR OLD ERRORS
+    ===================================== */
 
 function clearErrors() {
 
     const groups =
-        document.querySelectorAll(".form-group");
+        contactForm.querySelectorAll(".form-group");
 
-    groups.forEach(group => {
+    groups.forEach(function (group) {
 
         group.classList.remove("error");
 
-        const message =
+        const errorMessage =
             group.querySelector(".error-message");
 
-        if (message) {
-            message.textContent = "";
+        if (errorMessage) {
+            errorMessage.textContent = "";
         }
 
     });
 
-    const success =
-        document.getElementById("formSuccess");
-
-    if (success) {
-        success.textContent = "";
+    if (successMessage) {
+        successMessage.textContent = "";
     }
 
 }
 
+    /* =====================================
+       EMAIL VALIDATION
+    ===================================== */
 
-function validateEmail(email) {
+    function validateEmail(email) {
 
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-}
+
+        return emailPattern.test(email);
+
+    }
+
+});

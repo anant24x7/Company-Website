@@ -34,31 +34,105 @@
 
         <div class="container navbar-container">
 
-            <a href="#" class="logo">
+            <!-- Logo -->
 
+            <a href="index.html" class="logo">
                 <span class="logo-blue">Dataweb</span>
-
                 <span class="logo-dark">Solutions</span>
-
             </a>
 
-            <ul class="nav-menu">
 
-                <li><a href="#">Home</a></li>
+            <!-- Mobile Button -->
 
-                <li><a href="services.html">Services</a></li>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation menu">
 
-                <li><a href="#">Solutions</a></li>
+                <i class="fa-solid fa-bars"></i>
 
-                <li><a href="#">Portfolio</a></li>
+            </button>
 
-                <li><a href="about.html">About</a></li>
 
-                <li><a href="#contact">Contact</a></li>
+            <!-- Navigation -->
+
+            <ul class="nav-menu" id="navMenu">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+
+                <!-- SERVICES DROPDOWN -->
+
+                <li class="nav-dropdown">
+
+                    <a href="services.html" class="dropdown-toggle">
+
+                        Services
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </a>
+
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a href="erp.html">
+                                ERP Consulting
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="power-bi.html">
+                                Power BI & Analytics
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="ai.html">
+                                AI & Automation
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="cloud.html">
+                                Cloud Solutions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="web-development.html">
+                                Web Development
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="consulting.html">
+                                Business Consulting
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
 
             </ul>
 
-            <a href="#" class="btn-primary">
+
+            <!-- CTA -->
+
+            <a href="contact.html"
+               class="btn-primary navbar-cta">
 
                 Book Free Consultation
 
@@ -68,7 +142,7 @@
 
     </nav>
 
-</header>
+</header>      
       
 
 <main>
@@ -584,17 +658,29 @@
             <h2>Frequently Asked Questions</h2>
         </div>
 
+
         <div class="faq-item">
 
-            <h3>Can Power BI connect directly to our ERP database?</h3>
+    <button class="faq-question">
 
-            <p>
-                Yes. Power BI can connect to supported databases and APIs,
-                depending on your ERP architecture and security requirements.
-            </p>
+        <span>
+            Can Power BI connect to ERP?
+        </span>
 
-        </div>
+        <i class="fa-solid fa-plus"></i>
 
+    </button>
+
+    <div class="faq-answer">
+
+        <p>
+            Yes. Power BI can connect to supported databases,
+            APIs and ERP systems depending on the architecture.
+        </p>
+
+    </div>
+
+    </div>
         <div class="faq-item">
 
             <h3>Can you automate our monthly MIS?</h3>
@@ -823,8 +909,15 @@
     
  </footer>   
 
+ 
+ <script src="js/script.js"></script>
+
+ <script src="js/contact.js"
+
  <script src="js/navbar.js"></script>
 
+ <script src="js/ui.js"></script>
+ 
 </body>
 
 </html>    
